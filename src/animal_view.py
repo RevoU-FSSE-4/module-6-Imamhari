@@ -1,11 +1,13 @@
 from flask import Blueprint, jsonify, request
 
+
+animal_view = Blueprint("animal_view", __name__)
+
 animals_data = {
     "animal_information": [],
     "enclosures": [],
     "feeding_schedules": []}
 
-animal_view = Blueprint("animal_view", __name__)
 
 def __init__(self, species, type, age, enclosure_id):
     self.species = species
