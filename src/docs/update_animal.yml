@@ -1,0 +1,52 @@
+tags:
+  - Update animal
+path: 
+  /animals/{id}:
+    get:
+      summary: Get animal by id
+      parameters:
+        - name: id
+          in: path
+          description: The animal id
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+parameters:
+  - in: path
+    name: id
+    description: The animal id
+    required: true
+    schema:
+      type: integer
+      minimum: 1
+  - name: body
+    in: body
+    required: true
+    schema:
+      id: Animal
+      required:
+        - species
+        - gender
+        - age
+        - type
+      properties:
+        species:
+          type: string
+          description: The animal species
+        gender:
+          type: string
+          description: The animal gender
+        age:
+          type: integer
+          description: The animal age
+          minimum: 1
+          maximum: 100
+        type:
+          type: string
+          description: The animal type
+responses:
+  200:
+    description: The animal was updated
+  404:
+    description: The animal was not updated

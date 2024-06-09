@@ -1,0 +1,7 @@
+tags:
+  - Get all employees
+responses:
+  200:
+    description: A list of employees
+  404:
+    description: The employees were not found

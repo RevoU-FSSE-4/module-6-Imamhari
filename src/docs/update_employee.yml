@@ -1,0 +1,50 @@
+tags:
+  - Update employee
+path: 
+  /employees/{id}:
+    get:
+      summary: Get employee by id
+      parameters:
+        - name: id
+          in: path
+          description: The employee id
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+parameters:
+  - in: path
+    name: id
+    description: The employee id
+    required: true
+    schema:
+      type: integer
+      minimum: 1
+  - name: body
+    in: body
+    required: true
+    schema:
+      id: Employee
+      required:
+        - name
+        - role
+        - email
+        - schedule
+      properties:
+        name:
+          type: string
+          description: The employee name
+        role:
+          type: string
+          description: The employee role
+        email:
+          type: string
+          description: The employee email
+        schedule:
+          type: string
+          description: The employee schedule
+responses:
+  200:
+    description: The employee was found
+  404:
+    description: The employee was not found

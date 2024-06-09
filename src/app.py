@@ -1,12 +1,27 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
+from datetime import datetime
+from flasgger import Swagger
 from animal_view import animal_view
-
+from employee_view import employee_view
 
 
 app = Flask(__name__)
+swagger = Swagger(app)
+
 app.register_blueprint(animal_view)
+app.register_blueprint(employee_view)
 
 
+@app.before_request
+def start_timer():
+    request.start_timer = datetime.now()
+
+@app.after_request
+def log_timer(response):
+    end_time = datetime.now()
+    request_time = (end_time - request.start_timer).total_seconds() 
+    print (f"Request time: {request_time}s")
+    return response
 
 
 @app.route("/")

@@ -1,0 +1,6 @@
+tags:
+- Get all animals
+responses:
+  200:
+    description: A list of animals
+  

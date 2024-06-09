@@ -1,0 +1,29 @@
+tags:
+  - Create animal
+parameters:
+  - name: body
+    in: body
+    description: The animal to create
+    required: true
+    schema:
+      type: object
+      properties:
+        species:
+          type: string
+          description: The animal name
+        type:
+          type: string
+          description: The animal type
+        age:
+          type: integer
+          description: The animal age
+          minimum: 1
+          maximum: 100
+        gender:
+          type: string
+          description: The animal gender
+responses:
+  201:
+    description: The animal was created
+  400:
+    description: The animal was not created

@@ -1,0 +1,15 @@
+tags:
+  - Delete animal
+parameters:
+  - name: id
+    in: path
+    description: The animal id
+    required: true
+    schema:
+      type: integer
+      minimum: 1
+responses:
+  200:
+    description: The animal was deleted
+  404:
+    description: The animal was not deleted

@@ -1,0 +1,15 @@
+tags: 
+  - Get animal by id
+parameters:
+  - name: id
+    in: path
+    description: The animal id
+    required: true
+    schema:
+      type: integer
+      minimum: 1
+responses:
+  200:
+    description: The animal was found
+  404:
+    description: The animal was not found

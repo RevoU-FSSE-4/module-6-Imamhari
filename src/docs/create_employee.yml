@@ -1,0 +1,27 @@
+tags:
+  - Create employee
+parameters:
+  -name: body
+    in: body
+    description: The employee to create
+    required: true
+    schema:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The employee name
+        role:
+          type: string
+          description: The employee role
+        email:
+          type: string
+          description: The employee email
+        schedule:
+          type: string
+          description: The employee schedule
+responses:
+  201:
+    description: The employee was created
+  400:
+    description: The employee was not created

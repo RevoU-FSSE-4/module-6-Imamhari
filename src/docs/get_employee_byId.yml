@@ -1,0 +1,15 @@
+tags:
+  - Get employee by id
+parameters:
+  - name: id
+    in: path
+    description: The employee id
+    required: true
+    schema:
+      type: integer
+      minimum: 1
+responses:
+  200:
+    description: The employee was found
+  404:
+    description: The employee was not found
