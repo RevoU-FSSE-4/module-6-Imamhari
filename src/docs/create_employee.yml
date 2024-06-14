@@ -1,7 +1,7 @@
 tags:
   - Create employee
 parameters:
-  -name: body
+  - name: body
     in: body
     description: The employee to create
     required: true

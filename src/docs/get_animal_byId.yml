@@ -1,7 +1,7 @@
 tags: 
   - Get animal by id
 parameters:
-  - name: id
+  - name: body
     in: path
     description: The animal id
     required: true

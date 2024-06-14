@@ -20,7 +20,7 @@ parameters:
     schema:
       type: integer
       minimum: 1
-  - name: body
+  - name: employee
     in: body
     required: true
     schema:

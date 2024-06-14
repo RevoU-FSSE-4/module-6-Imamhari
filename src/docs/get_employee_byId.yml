@@ -1,7 +1,7 @@
 tags:
   - Get employee by id
 parameters:
-  - name: id
+  - name: employee
     in: path
     description: The employee id
     required: true
